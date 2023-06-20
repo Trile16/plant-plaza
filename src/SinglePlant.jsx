@@ -1,7 +1,6 @@
 import React from "react";
 
 const SinglePlant = ({ plant }) => {
-  console.log(plant);
   return (
     <div>
       <h2>Name: {plant.name}</h2>

@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
+import { fetchAllPlants } from "./api/plants";
 import NavBar from "./NavBar";
 import Home from "./Home";
+import Login from "./Login";
 import Plants from "./Plants";
 
 function App() {
@@ -9,10 +11,7 @@ function App() {
 
   useEffect(() => {
     async function getPlants() {
-      const response = await fetch(
-        "https://plant-plaza-api.fly.dev/api/plants"
-      );
-      const result = await response.json();
+      const result = await fetchAllPlants();
       setPlants(result.data.plants);
     }
     getPlants();
@@ -24,6 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/plants" element={<Plants plants={plants} />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </>
   );
