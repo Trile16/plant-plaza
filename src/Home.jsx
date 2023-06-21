@@ -11,7 +11,7 @@ const Home = ({ plants }) => {
       <div id="home-separator">
         <div id="home-content">
           <h2>The Plant Site for Plant Lovers</h2>
-          <p>Need some more plants? Create your wishlist here!</p>
+          <p>Thinking about getting more plants? Create your wishlist here!</p>
         </div>
         <img src={homeimg} alt="Plant Images" id="home-img" />
       </div>

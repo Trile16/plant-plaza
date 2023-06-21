@@ -6,7 +6,7 @@ import usericon from "./assets/user-icon.png";
 
 const NavBar = () => {
   return (
-    <>
+    <div id="nav-bar">
       <h3 id="top-bar">P L A N T&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P L A Z A</h3>
       <div id="title-login">
         <Link to="/" id="logo-title">
@@ -25,7 +25,7 @@ const NavBar = () => {
         </Link>
       </div>
       <hr />
-    </>
+    </div>
   );
 };
 
