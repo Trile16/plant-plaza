@@ -6,6 +6,7 @@ import Home from "./Home";
 import Login from "./Login";
 import Plants from "./Plants";
 import SinglePlantDisplay from "./SinglePlantDisplay";
+import "./App.css";
 
 function App() {
   const [plants, setPlants] = useState([]);

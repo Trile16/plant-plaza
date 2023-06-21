@@ -1,0 +1,79 @@
+#top-bar {
+  width: 100%;
+  background-color: #1bac57;
+  padding: 0.5rem;
+  margin: 0;
+  text-align: center;
+  color: white;
+}
+
+#title-login {
+  width: 96%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+#logo-title {
+  display: flex;
+  align-items: center;
+  width: 15%;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+#logo {
+  width: 6rem;
+}
+
+#title {
+  font-size: 3rem;
+  color: black;
+}
+
+hr {
+  height: 1px;
+  background-color: lightgray;
+  border: none;
+  margin: 0;
+}
+
+#nav-links {
+  display: flex;
+  justify-content: center;
+}
+
+.link {
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: black;
+  padding: 1rem;
+}
+
+.link:hover {
+  font-weight: normal;
+  font-style: italic;
+  color: #1bac57;
+}
+
+.link-login {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.link-login:hover {
+  font-weight: normal;
+  font-style: italic;
+  color: #1bac57;
+}
+
+#user-icon {
+  width: 2rem;
+  padding-left: 1rem;
+}
