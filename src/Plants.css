@@ -1,0 +1,5 @@
+.content {
+  background-color: #85c124;
+  display: flex;
+  flex-flow: row wrap;
+}

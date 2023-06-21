@@ -1,0 +1,16 @@
+.card {
+  border: solid 2px black;
+  background-color: FEFEFE;
+  width: 15%;
+  height: 40rem;
+  min-height: 100%;
+  padding: 2vw;
+}
+
+.card-name {
+  font-size: 2rem;
+}
+
+.plant-img {
+  width: 90%;
+}
