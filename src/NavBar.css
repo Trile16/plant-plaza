@@ -1,7 +1,8 @@
 #top-bar {
   width: 100%;
   background-color: #1bac57;
-  padding: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   margin: 0;
   text-align: center;
   color: white;
