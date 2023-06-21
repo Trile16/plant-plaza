@@ -45,3 +45,29 @@ label {
   border: none;
   padding: 0.2rem;
 }
+
+.button {
+  padding: 0.7rem;
+  border: solid 1px lightgray;
+  border-radius: 10%;
+  background-color: white;
+}
+
+.button:hover {
+  cursor: pointer;
+  font-style: italic;
+}
+
+#register-link {
+  text-align: center;
+}
+
+.register {
+  color: black;
+  text-decoration: none;
+}
+
+.register:hover {
+  color: #1bac57;
+  font-style: italic;
+}

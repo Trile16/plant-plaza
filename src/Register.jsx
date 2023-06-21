@@ -1,25 +1,46 @@
 import { useState } from "react";
-import { fetchUserLogin } from "./api/users";
 import { Link } from "react-router-dom";
-import "./Login.css";
 
-const Login = () => {
+const Register = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(username);
     console.log(password);
-
-    const response = fetchUserLogin({ username, password });
   };
 
   return (
     <div id="login-container">
       <div id="login-area">
-        <h2 id="login-title">Welcome Back Planter!</h2>
+        <h2 id="login-title">Register</h2>
 
         <form onSubmit={handleSubmit}>
+          <label>
+            <p>First Name</p>
+            <input
+              className="input-fields"
+              type="text"
+              name="first-name"
+              placeholder="First Name"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+            />
+          </label>
+          <label>
+            <p>Last Name</p>
+            <input
+              className="input-fields"
+              type="text"
+              name="last-name"
+              placeholder="Last Name"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+            />
+          </label>
           <label>
             <p>Username</p>
             <input
@@ -44,14 +65,15 @@ const Login = () => {
           </label>
           <input
             type="submit"
-            value="Sign In"
+            value="Sign Up"
             id="submit-login"
             className="button"
           />
         </form>
+
         <p id="register-link">
-          Need an account? Sign up{" "}
-          <Link to="/register" class="register">
+          Already have an account? Log in{" "}
+          <Link to="/login" class="register">
             HERE
           </Link>
         </p>
@@ -60,4 +82,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

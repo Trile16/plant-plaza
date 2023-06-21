@@ -19,6 +19,12 @@
   width: 100%;
 }
 
+.card:hover {
+  font-weight: normal;
+  font-style: italic;
+  color: #1bac57;
+}
+
 .plant-img {
   width: 100%;
   height: 20rem;
