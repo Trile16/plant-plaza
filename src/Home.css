@@ -2,7 +2,9 @@
   text-align: center;
   background-color: #e5fff3;
   margin: 0;
-  padding: 0.5rem;
+  padding: 1rem;
+  font-weight: normal;
+  font-size: 2rem;
 }
 
 #home-separator {
@@ -13,8 +15,40 @@
   margin: 0;
   width: 50%;
   background-color: #e5fff3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #home-img {
   width: 50%;
+  object-fit: cover;
+}
+
+h2 {
+  font-size: 4rem;
+  width: 50%;
+  margin: 0;
+  font-weight: lighter;
+}
+
+p {
+  width: 50%;
+  font-size: 1.5rem;
+}
+
+#featured-title {
+  font-size: 3rem;
+  font-weight: lighter;
+  background-color: #ffeedc;
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+}
+
+#featured-plants {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
 }

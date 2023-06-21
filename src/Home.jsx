@@ -1,15 +1,31 @@
 import React from "react";
 import "./Home.css";
 import homeimg from "./assets/home-image.jpg";
+import SinglePlant from "./SinglePlant";
 
-const Home = () => {
+const Home = ({ plants }) => {
+  console.log(plants[5]);
   return (
     <div id="home-area">
       <h3 id="home-header">Welcome to Plant Plaza</h3>
       <div id="home-separator">
-        <h2 id="home-content">The Plant Site for Plant Lovers</h2>
+        <div id="home-content">
+          <h2>The Plant Site for Plant Lovers</h2>
+          <p>Need some more plants? Create your wishlist here!</p>
+        </div>
         <img src={homeimg} alt="Plant Images" id="home-img" />
       </div>
+      <h3 id="featured-title">Featured Plants</h3>
+      <div></div>
+      {plants ? (
+        <div id="featured-plants">
+          <SinglePlant plant={plants[5]} />
+          <SinglePlant plant={plants[23]} />
+          <SinglePlant plant={plants[14]} />
+          <SinglePlant plant={plants[32]} />
+          <SinglePlant plant={plants[8]} />
+        </div>
+      ) : null}
     </div>
   );
 };

@@ -1,0 +1,10 @@
+#content-separator {
+  display: flex;
+}
+
+#image-box {
+  min-width: 33%;
+  max-width: 50%;
+  object-fit: cover;
+  height: 60rem;
+}

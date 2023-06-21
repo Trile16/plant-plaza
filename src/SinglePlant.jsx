@@ -4,10 +4,13 @@ import "./SinglePlant.css";
 
 const SinglePlant = ({ plant }) => {
   return (
-    <div className="card">
-      <h2 className="card-name">{plant.name}</h2>
-      <img className="plant-img" src={plant.imageURL}></img>
-      <Link to={`/plants/${plant.id}`}>See More Details</Link>
+    <div>
+      {plant && plant.id ? (
+        <Link to={`/plants/${plant.id}`} className="card">
+          <img className="plant-img" src={plant.imageURL}></img>
+          <h2 className="card-name">{plant.name}</h2>
+        </Link>
+      ) : null}
     </div>
   );
 };

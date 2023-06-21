@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { fetchSinglePlant } from "./api/plants";
 import { useParams, Link } from "react-router-dom";
+import "./SinglePlantDisplay.css";
 
 const SinglePlantDisplay = () => {
   const [plant, setPlant] = useState({});
@@ -16,12 +17,13 @@ const SinglePlantDisplay = () => {
   }, []);
 
   return (
-    <div>
-      <h2>Name: {plant.name}</h2>
-      <h2>Description: {plant.description}</h2>
-      <h2>Category: {plant.category}</h2>
-      <img src={plant.imageURL}></img>
-      <Link to="/plants">Back to All Plants</Link>
+    <div id="content-separator">
+      <img id="image-box" src={plant.imageURL}></img>
+      <div id="text-box">
+        <p>Name: {plant.name}</p>
+        <p>Description: {plant.description}</p>
+        <Link to="/plants">Back to All Plants</Link>
+      </div>
     </div>
   );
 };
