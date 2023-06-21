@@ -1,17 +1,29 @@
 import { useState } from "react";
 import { fetchUserLogin } from "./api/users";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 
-const Login = () => {
+const Login = ({ setIsLoggedIn }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(username);
     console.log(password);
 
-    const response = fetchUserLogin({ username, password });
+    const response = await fetchUserLogin({ username, password });
+    console.log(response);
+
+    if (response.success) {
+      alert(response.data.message);
+      setIsLoggedIn(true);
+      localStorage.setItem("token", response.data.token);
+      navigate("/plants");
+    } else {
+      alert(response.error.message);
+    }
   };
 
   return (
@@ -51,7 +63,7 @@ const Login = () => {
         </form>
         <p id="register-link">
           Need an account? Sign up{" "}
-          <Link to="/register" class="register">
+          <Link to="/register" className="register">
             HERE
           </Link>
         </p>

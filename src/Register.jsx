@@ -73,7 +73,7 @@ const Register = () => {
 
         <p id="register-link">
           Already have an account? Log in{" "}
-          <Link to="/login" class="register">
+          <Link to="/login" className="register">
             HERE
           </Link>
         </p>

@@ -11,6 +11,7 @@ import "./App.css";
 
 function App() {
   const [plants, setPlants] = useState([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     async function getPlants() {
@@ -22,12 +23,15 @@ function App() {
 
   return (
     <>
-      <NavBar />
+      <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       <Routes>
         <Route path="/" element={<Home plants={plants} />} />
         <Route path="/plants" element={<Plants plants={plants} />} />
         <Route path="/plants/:id" element={<SinglePlantDisplay />} />
-        <Route path="/login" element={<Login />} />
+        <Route
+          path="/login"
+          element={<Login setIsLoggedIn={setIsLoggedIn} />}
+        />
         <Route path="/register" element={<Register />} />
       </Routes>
     </>
