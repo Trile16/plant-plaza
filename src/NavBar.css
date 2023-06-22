@@ -80,6 +80,7 @@ hr {
   font-weight: normal;
   font-style: italic;
   color: #1bac57;
+  cursor: pointer;
 }
 
 #user-icon {

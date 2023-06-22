@@ -1,0 +1,18 @@
+#profile-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-profile {
+  margin: 2rem;
+  border: solid 1px lightgray;
+  border-radius: 2%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  width: fit-content;
+  max-width: 50%;
+}

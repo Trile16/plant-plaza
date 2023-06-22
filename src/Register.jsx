@@ -1,22 +1,39 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { fetchUserRegistration } from "./api/users";
+import "./Register.css";
 
-const Register = () => {
+const Register = ({ setIsLoggedIn }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
 
+  const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(username);
-    console.log(password);
+
+    const result = await fetchUserRegistration({
+      firstName,
+      lastName,
+      username,
+      password,
+    });
+
+    if (result.data) {
+      alert(result.data.message);
+      setIsLoggedIn(true);
+      navigate("/");
+    } else {
+      alert(result.error.message);
+    }
   };
 
   return (
-    <div id="login-container">
-      <div id="login-area">
-        <h2 id="login-title">Register</h2>
+    <div id="register-container">
+      <div id="register-area">
+        <h2 id="register-title">Register</h2>
 
         <form onSubmit={handleSubmit}>
           <label>
@@ -71,9 +88,9 @@ const Register = () => {
           />
         </form>
 
-        <p id="register-link">
+        <p id="login-link">
           Already have an account? Log in{" "}
-          <Link to="/login" className="register">
+          <Link to="/login" className="login">
             HERE
           </Link>
         </p>
