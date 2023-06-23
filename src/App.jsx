@@ -49,7 +49,7 @@ function App() {
     if (isLoggedIn) {
       getUserPlants();
     } else {
-      setUserPlants({});
+      setUserPlants([]);
     }
   }, [isLoggedIn]);
 
@@ -88,7 +88,17 @@ function App() {
             />
           }
         />
-        <Route path="/plants/:id" element={<SinglePlantDisplay />} />
+        <Route
+          path="/plants/:id"
+          element={
+            <SinglePlantDisplay
+              user={user}
+              setUser={setUser}
+              userPlants={userPlants}
+              setUserPlants={setUserPlants}
+            />
+          }
+        />
         <Route
           path="/login"
           element={<Login setIsLoggedIn={setIsLoggedIn} />}
