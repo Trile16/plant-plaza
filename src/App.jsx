@@ -65,7 +65,15 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Home plants={plants} user={user} setUser={setUser} />}
+          element={
+            <Home
+              plants={plants}
+              user={user}
+              setUser={setUser}
+              userPlants={userPlants}
+              setUserPlants={setUserPlants}
+            />
+          }
         />
         <Route
           path="/plants"
