@@ -45,7 +45,7 @@ const SinglePlantDisplay = ({ user, setUser, userPlants, setUserPlants }) => {
     <div id="plant-box">
       <h2 id="plant-name-title">{plant.name}</h2>
       <div id="content-separator">
-        <img id="image-box" src={plant.imageURL} />
+        <img id="image-box" className="plant-img" src={plant.imageURL} />
         <div id="text-box">
           <p id="plant-description">{plant.description}</p>
           {user && user.id ? (

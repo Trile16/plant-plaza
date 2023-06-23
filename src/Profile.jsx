@@ -1,8 +1,15 @@
 import React from "react";
 import SinglePlant from "./SinglePlant";
 import { useNavigate } from "react-router-dom";
+import "./Profile.css";
 
-const Profile = ({ user, userPlants, setUserPlants, setIsLoggedIn }) => {
+const Profile = ({
+  user,
+  userPlants,
+  setUser,
+  setUserPlants,
+  setIsLoggedIn,
+}) => {
   const navigate = useNavigate();
 
   function logoutEvent() {
@@ -17,22 +24,38 @@ const Profile = ({ user, userPlants, setUserPlants, setIsLoggedIn }) => {
   console.log(user);
   return (
     <div>
-      {user && user.id ? (
+      {user && user.id && userPlants && userPlants.length ? (
         <div id="profile-page">
-          <h1>Hey there, {user.firstName}!</h1>
+          <h3 id="profile-header">Hey there, {user.firstName}!</h3>
+          <div className="logout-container">
+            <a onClick={logoutEvent} className="link-logout">
+              Logout
+            </a>
+          </div>
           <h2>Come check out your plant wishlist!</h2>
           <div className="content-profile">
             {userPlants.map((plant, idx) => {
-              return <SinglePlant plant={plant} key={idx} />;
+              return (
+                <SinglePlant
+                  plant={plant}
+                  user={user}
+                  setUser={setUser}
+                  userPlants={userPlants}
+                  setUserPlants={setUserPlants}
+                  key={idx}
+                />
+              );
             })}
           </div>
-          <a onClick={logoutEvent} className="link-login">
-            Logout
-          </a>
         </div>
       ) : (
         <div id="profile-page">
           <h1>Hey there, {user.firstName}!</h1>
+          <div className="logout-container">
+            <a onClick={logoutEvent} className="link-logout">
+              Logout
+            </a>
+          </div>
           <h2>You don't have any plants in your wishlist...</h2>
         </div>
       )}

@@ -113,6 +113,7 @@ function App() {
             <Profile
               setIsLoggedIn={setIsLoggedIn}
               user={user}
+              setUser={setUser}
               userPlants={userPlants}
               setUserPlants={setUserPlants}
             />

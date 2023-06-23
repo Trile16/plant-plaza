@@ -5,6 +5,17 @@
   align-items: center;
 }
 
+#profile-header {
+  text-align: center;
+  background-color: #e5fff3;
+  margin: 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-weight: normal;
+  font-size: 2rem;
+  width: 100%;
+}
+
 .content-profile {
   margin: 2rem;
   border: solid 1px lightgray;
@@ -15,4 +26,27 @@
   flex-flow: row wrap;
   width: fit-content;
   max-width: 50%;
+}
+
+.logout-container {
+  background-color: #ffeedc;
+  margin: 0;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  width: 100%;
+  text-align: center;
+}
+
+.link-logout {
+  font-size: 1.5rem;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.link-logout:hover {
+  font-weight: normal;
+  font-style: italic;
+  color: #1bac57;
+  cursor: pointer;
 }

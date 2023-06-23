@@ -53,3 +53,9 @@
   font-style: italic;
   color: #1bac57;
 }
+
+.plant-img {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+}
