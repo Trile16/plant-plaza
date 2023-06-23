@@ -19,9 +19,6 @@ const Profile = ({
     navigate("/");
   }
 
-  console.log(userPlants);
-
-  console.log(user);
   return (
     <div>
       {user && user.id && userPlants && userPlants.length ? (
@@ -32,7 +29,9 @@ const Profile = ({
               Logout
             </a>
           </div>
-          <h2>Come check out your plant wishlist!</h2>
+          <h2 className="wishlist-title">
+            Come check out your plant wishlist!
+          </h2>
           <div className="content-profile">
             {userPlants.map((plant, idx) => {
               return (
@@ -50,13 +49,15 @@ const Profile = ({
         </div>
       ) : (
         <div id="profile-page">
-          <h1>Hey there, {user.firstName}!</h1>
+          <h3 id="profile-header">Hey there, {user.firstName}!</h3>
           <div className="logout-container">
             <a onClick={logoutEvent} className="link-logout">
               Logout
             </a>
           </div>
-          <h2>You don't have any plants in your wishlist...</h2>
+          <h2 className="wishlist-title">
+            You don't have any plants in your wishlist...
+          </h2>
         </div>
       )}
     </div>

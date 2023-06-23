@@ -23,13 +23,11 @@ const SinglePlantDisplay = ({ user, setUser, userPlants, setUserPlants }) => {
     if (result.success) {
       const _result = await fetchSinglePlant(plant.id);
       setUserPlants([...userPlants, _result.data.plant]);
-      console.log("USER STATE", user);
     }
   }
 
   async function removePlant() {
     const result = await removePlantFromUser(plant.id);
-    console.log(result);
 
     if (result.success) {
       const _result = await fetchSinglePlant(plant.id);
@@ -37,7 +35,6 @@ const SinglePlantDisplay = ({ user, setUser, userPlants, setUserPlants }) => {
         (plant) => plant.id != _result.data.plant.id
       );
       setUserPlants([...newUserPlants]);
-      console.log("USER STATE", user);
     }
   }
 
@@ -53,9 +50,13 @@ const SinglePlantDisplay = ({ user, setUser, userPlants, setUserPlants }) => {
               {userPlants &&
               userPlants.length &&
               userPlants.some((e) => e.id == plant.id) ? (
-                <button onClick={removePlant}>Remove from WishList</button>
+                <button className="add-remove-button" onClick={removePlant}>
+                  Remove from WishList
+                </button>
               ) : (
-                <button onClick={addPlant}>Add to WishList</button>
+                <button className="add-remove-button" onClick={addPlant}>
+                  Add to WishList
+                </button>
               )}
             </div>
           ) : null}

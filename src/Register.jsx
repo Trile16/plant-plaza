@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { fetchUserRegistration } from "./api/users";
 import "./Register.css";
 
-const Register = ({ setIsLoggedIn }) => {
+const Register = ({ setIsLoggedIn, setToken }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -24,6 +24,7 @@ const Register = ({ setIsLoggedIn }) => {
     if (result.data) {
       alert(result.data.message);
       setIsLoggedIn(true);
+      setToken(response.data.token);
       navigate("/");
     } else {
       alert(result.error.message);

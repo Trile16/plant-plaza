@@ -4,7 +4,6 @@ import homeimg from "./assets/home-image.jpg";
 import SinglePlant from "./SinglePlant";
 
 const Home = ({ plants, user, setUser, userPlants, setUserPlants }) => {
-  console.log(plants[5]);
   return (
     <div id="home-area">
       <h3 id="home-header">Welcome to Plant Plaza</h3>

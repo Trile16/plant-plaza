@@ -16,11 +16,17 @@ function App() {
   const [plantCategory, setPlantCategory] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState({});
+  const [token, setToken] = useState(localStorage.getItem("token"));
   const [userPlants, setUserPlants] = useState([]);
 
   useEffect(() => {
+    if (token) {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
+  useEffect(() => {
     async function getPlants() {
-      console.log("USE EEFFECT");
       const result = await fetchAllPlants();
       setPlants(result.data.plants);
     }
@@ -44,7 +50,6 @@ function App() {
     async function getUserPlants() {
       const result = await fetchUserPlants();
       setUserPlants(result.data.plants);
-      console.log(userPlants, "USERPLANTS");
     }
     if (isLoggedIn) {
       getUserPlants();
@@ -101,11 +106,13 @@ function App() {
         />
         <Route
           path="/login"
-          element={<Login setIsLoggedIn={setIsLoggedIn} />}
+          element={<Login setIsLoggedIn={setIsLoggedIn} setToken={setToken} />}
         />
         <Route
           path="/register"
-          element={<Register setIsLoggedIn={setIsLoggedIn} />}
+          element={
+            <Register setIsLoggedIn={setIsLoggedIn} setToken={setToken} />
+          }
         />
         <Route
           path="/profile"

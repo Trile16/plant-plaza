@@ -3,23 +3,21 @@ import { fetchUserLogin } from "./api/users";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 
-const Login = ({ setIsLoggedIn }) => {
+const Login = ({ setIsLoggedIn, setToken }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(username);
-    console.log(password);
 
     const response = await fetchUserLogin({ username, password });
-    console.log(response);
 
     if (response.success) {
       alert(response.data.message);
       setIsLoggedIn(true);
       localStorage.setItem("token", response.data.token);
+      setToken(response.data.token);
       navigate("/plants");
     } else {
       alert(response.error.message);
