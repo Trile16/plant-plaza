@@ -3,7 +3,7 @@ import "./Home.css";
 import homeimg from "./assets/home-image.jpg";
 import SinglePlant from "./SinglePlant";
 
-const Home = ({ plants }) => {
+const Home = ({ plants, user }) => {
   console.log(plants[5]);
   return (
     <div id="home-area">
@@ -19,11 +19,11 @@ const Home = ({ plants }) => {
       <div></div>
       {plants ? (
         <div id="featured-plants">
-          <SinglePlant plant={plants[5]} />
-          <SinglePlant plant={plants[23]} />
-          <SinglePlant plant={plants[14]} />
-          <SinglePlant plant={plants[32]} />
-          <SinglePlant plant={plants[8]} />
+          <SinglePlant plant={plants[5]} user={user} />
+          <SinglePlant plant={plants[23]} user={user} />
+          <SinglePlant plant={plants[14]} user={user} />
+          <SinglePlant plant={plants[32]} user={user} />
+          <SinglePlant plant={plants[8]} user={user} />
         </div>
       ) : null}
     </div>

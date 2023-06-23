@@ -15,9 +15,11 @@ function App() {
   const [plants, setPlants] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState({});
+  const [userPlants, setUserPlants] = useState([]);
 
   useEffect(() => {
     async function getPlants() {
+      console.log("USE EEFFECT");
       const result = await fetchAllPlants();
       setPlants(result.data.plants);
     }
@@ -25,14 +27,28 @@ function App() {
   }, []);
 
   useEffect(() => {
+    async function getUser() {
+      const result = await fetchUserPlants();
+      delete result.data.plants;
+      setUser(result.data);
+    }
+    if (isLoggedIn) {
+      getUser();
+    } else {
+      setUser({});
+    }
+  }, [isLoggedIn]);
+
+  useEffect(() => {
     async function getUserPlants() {
       const result = await fetchUserPlants();
-      setUser(result.data);
+      setUserPlants(result.data.plants);
+      console.log(userPlants, "USERPLANTS");
     }
     if (isLoggedIn) {
       getUserPlants();
     } else {
-      setUser({});
+      setUserPlants({});
     }
   }, [isLoggedIn]);
 
@@ -44,8 +60,22 @@ function App() {
         user={user}
       />
       <Routes>
-        <Route path="/" element={<Home plants={plants} />} />
-        <Route path="/plants" element={<Plants plants={plants} />} />
+        <Route
+          path="/"
+          element={<Home plants={plants} user={user} setUser={setUser} />}
+        />
+        <Route
+          path="/plants"
+          element={
+            <Plants
+              plants={plants}
+              user={user}
+              setUser={setUser}
+              userPlants={userPlants}
+              setUserPlants={setUserPlants}
+            />
+          }
+        />
         <Route path="/plants/:id" element={<SinglePlantDisplay />} />
         <Route
           path="/login"
@@ -57,7 +87,14 @@ function App() {
         />
         <Route
           path="/profile"
-          element={<Profile setIsLoggedIn={setIsLoggedIn} user={user} />}
+          element={
+            <Profile
+              setIsLoggedIn={setIsLoggedIn}
+              user={user}
+              userPlants={userPlants}
+              setUserPlants={setUserPlants}
+            />
+          }
         />
       </Routes>
     </>
