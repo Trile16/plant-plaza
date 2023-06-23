@@ -48,18 +48,16 @@ label {
 }
 
 .button {
-  padding: 0.7rem;
-  border: solid 1px lightgray;
-  border-radius: 10%;
-  width: 30%;
-  margin-left: 35%;
-  margin-right: 35%;
-  background-color: white;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  border-color: lightgrey;
 }
 
 .button:hover {
-  cursor: pointer;
+  font-weight: normal;
   font-style: italic;
+  color: #1bac57;
 }
 
 #register-link {
