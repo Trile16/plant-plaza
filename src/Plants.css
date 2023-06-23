@@ -2,16 +2,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 2rem;
+  width: 100vw;
 }
 .content {
   background-color: white;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-flow: row wrap;
+  width: 80%;
 }
 
 .plants-title {
   text-align: center;
-  font-size: 4rem;
+  background-color: #e5fff3;
+  margin: 0;
+  width: 100%;
+  padding: 1rem;
+  font-weight: normal;
+  font-size: 2rem;
 }
