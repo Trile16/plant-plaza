@@ -1,10 +1,13 @@
 #content-separator {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
 }
 
 #image-box {
   min-width: 33%;
   max-width: 50%;
   object-fit: cover;
-  height: 60rem;
+  height: 40rem;
 }

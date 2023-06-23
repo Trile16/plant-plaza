@@ -1,12 +1,11 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import "./NavBar.css";
 import plantplazalogo from "./assets/plant-plaza-logo.png";
 import usericon from "./assets/user-icon.png";
 
-const NavBar = ({ isLoggedIn, setIsLoggedIn, user }) => {
+const NavBar = ({ isLoggedIn, user, plantCategory, setPlantCategory }) => {
   const navigate = useNavigate();
-
   return (
     <div id="nav-bar">
       {user && user.id ? (
@@ -33,9 +32,51 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn, user }) => {
       </div>
       <hr />
       <div id="nav-links">
-        <Link to="/plants" className="link">
-          Plants
+        <Link
+          to="/plants"
+          className="link"
+          onClick={() => {
+            setPlantCategory("");
+          }}
+        >
+          All Plants
         </Link>
+        <a
+          className="link"
+          onClick={() => {
+            setPlantCategory("Succulent");
+            navigate("/plants");
+          }}
+        >
+          Succulent
+        </a>
+        <a
+          className="link"
+          onClick={() => {
+            setPlantCategory("Tropical");
+            navigate("/plants");
+          }}
+        >
+          Tropical
+        </a>
+        <a
+          className="link"
+          onClick={() => {
+            setPlantCategory("Vine");
+            navigate("/plants");
+          }}
+        >
+          Vine
+        </a>
+        <a
+          className="link"
+          onClick={() => {
+            setPlantCategory("Flowering");
+            navigate("/plants");
+          }}
+        >
+          Flowering
+        </a>
       </div>
       <hr />
     </div>

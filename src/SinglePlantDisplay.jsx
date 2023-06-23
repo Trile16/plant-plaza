@@ -18,11 +18,11 @@ const SinglePlantDisplay = () => {
 
   return (
     <div id="content-separator">
-      <img id="image-box" src={plant.imageURL}></img>
+      <img id="image-box" src={plant.imageURL} />
       <div id="text-box">
         <p>Name: {plant.name}</p>
         <p>Description: {plant.description}</p>
-        <Link to="/plants">Back to All Plants</Link>
+        <Link to="/plants">Back to Plants</Link>
       </div>
     </div>
   );

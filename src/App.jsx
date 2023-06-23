@@ -13,6 +13,7 @@ import "./App.css";
 
 function App() {
   const [plants, setPlants] = useState([]);
+  const [plantCategory, setPlantCategory] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState({});
   const [userPlants, setUserPlants] = useState([]);
@@ -58,6 +59,8 @@ function App() {
         isLoggedIn={isLoggedIn}
         setIsLoggedIn={setIsLoggedIn}
         user={user}
+        plantCategory={plantCategory}
+        setPlantCategory={setPlantCategory}
       />
       <Routes>
         <Route
@@ -73,6 +76,7 @@ function App() {
               setUser={setUser}
               userPlants={userPlants}
               setUserPlants={setUserPlants}
+              plantCategory={plantCategory}
             />
           }
         />
