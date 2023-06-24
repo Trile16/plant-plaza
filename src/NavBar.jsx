@@ -3,6 +3,8 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import "./NavBar.css";
 import plantplazalogo from "./assets/plant-plaza-logo.png";
 import usericon from "./assets/user-icon.png";
+import githubmark from "./assets/github-mark.png";
+import linkedinmark from "./assets/linkedin-mark.png";
 
 const NavBar = ({ isLoggedIn, user, plantCategory, setPlantCategory }) => {
   const navigate = useNavigate();
@@ -18,6 +20,18 @@ const NavBar = ({ isLoggedIn, user, plantCategory, setPlantCategory }) => {
           <img src={plantplazalogo} alt="Plant Plaza Logo" id="logo" />
           <h1 id="title">Plant Plaza</h1>
         </Link>
+        <div>
+          <a href="https://github.com/Trile16/plant-plaza">
+            <img className="social-icon" src={githubmark} alt="GitHub Logo" />
+          </a>
+          <a href="https://www.linkedin.com/in/trile16/">
+            <img
+              className="social-icon"
+              src={linkedinmark}
+              alt="Linkedin Logo"
+            />
+          </a>
+        </div>
         {isLoggedIn ? (
           <Link to="/profile" className="link-login">
             Profile
@@ -26,7 +40,6 @@ const NavBar = ({ isLoggedIn, user, plantCategory, setPlantCategory }) => {
         ) : (
           <Link to="/login" className="link-login">
             Login
-            <img src={usericon} alt="User Icon" id="user-icon" />
           </Link>
         )}
       </div>

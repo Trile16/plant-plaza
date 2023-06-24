@@ -44,7 +44,9 @@ function App() {
   useEffect(() => {
     async function getUser() {
       const result = await fetchUserPlants();
+
       delete result.data.plants;
+
       setUser(result.data);
     }
     if (isLoggedIn) {

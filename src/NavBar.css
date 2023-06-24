@@ -27,7 +27,7 @@
 #logo-title {
   display: flex;
   align-items: center;
-  width: 10%;
+  width: 10rem;
   justify-content: space-between;
   text-decoration: none;
 }
@@ -69,9 +69,10 @@ hr {
 }
 
 .link-login {
+  width: 10rem;
   font-size: 2rem;
   display: flex;
-  align-items: center;
+  flex-direction: row-reverse;
   color: black;
   text-decoration: none;
   font-weight: bold;
@@ -86,5 +87,11 @@ hr {
 
 #user-icon {
   width: 2rem;
-  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.social-icon {
+  width: 4rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }

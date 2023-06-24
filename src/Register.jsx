@@ -23,8 +23,9 @@ const Register = ({ setIsLoggedIn, setToken }) => {
 
     if (result.data) {
       alert(result.data.message);
-      setIsLoggedIn(true);
+      localStorage.setItem("token", result.data.token);
       setToken(result.data.token);
+      setIsLoggedIn(true);
       navigate("/");
     } else {
       alert(result.error.message);
