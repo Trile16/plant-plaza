@@ -24,7 +24,7 @@ const Register = ({ setIsLoggedIn, setToken }) => {
     if (result.data) {
       alert(result.data.message);
       setIsLoggedIn(true);
-      setToken(response.data.token);
+      setToken(result.data.token);
       navigate("/");
     } else {
       alert(result.error.message);

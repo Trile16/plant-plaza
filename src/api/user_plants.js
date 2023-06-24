@@ -14,7 +14,6 @@ export async function fetchUserPlants() {
     );
 
     const result = await response.json();
-    console.log(result);
     return result;
   } catch (error) {
     console.error(error);
@@ -40,7 +39,6 @@ export async function addPlantToUser(plantId) {
     );
 
     const result = await response.json();
-    console.log(result);
     return result;
   } catch (error) {
     console.error(error);
@@ -66,7 +64,6 @@ export async function removePlantFromUser(plantId) {
     );
 
     const result = await response.json();
-    console.log(result);
     return result;
   } catch (error) {
     console.error(error);

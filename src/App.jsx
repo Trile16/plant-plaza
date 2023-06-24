@@ -21,7 +21,15 @@ function App() {
 
   useEffect(() => {
     if (token) {
-      setIsLoggedIn(true);
+      async function testToken() {
+        const result = await fetchUserPlants();
+        if (result.success) {
+          setIsLoggedIn(true);
+        } else {
+          localStorage.removeItem("token");
+        }
+      }
+      testToken();
     }
   }, []);
 

@@ -15,7 +15,7 @@ export async function fetchUserLogin({ username, password }) {
     );
 
     const result = await response.json();
-    console.log(result);
+
     return result;
   } catch (error) {
     console.error(error);
@@ -46,7 +46,7 @@ export async function fetchUserRegistration({
     );
 
     const result = await response.json();
-    console.log(result);
+
     return result;
   } catch (error) {
     console.error(error);
