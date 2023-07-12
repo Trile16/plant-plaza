@@ -77,3 +77,25 @@ label {
   color: #1bac57;
   font-style: italic;
 }
+
+@media (max-width: 550px) {
+  #login-container {
+    justify-content: start;
+    background-color: #ffeedc;
+  }
+
+  #login-area {
+    width: fit-content;
+    min-width: 100%;
+    border: none;
+    justify-content: start;
+  }
+
+  #login-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: lighter;
+    width: 100%;
+    font-weight: lighter;
+  }
+}
