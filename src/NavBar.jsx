@@ -20,7 +20,7 @@ const NavBar = ({ isLoggedIn, user, plantCategory, setPlantCategory }) => {
           <img src={plantplazalogo} alt="Plant Plaza Logo" id="logo" />
           <h1 id="title">Plant Plaza</h1>
         </Link>
-        <div>
+        <div id="socials">
           <a href="https://github.com/Trile16/plant-plaza">
             <img className="social-icon" src={githubmark} alt="GitHub Logo" />
           </a>

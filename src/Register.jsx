@@ -21,7 +21,7 @@ const Register = ({ setIsLoggedIn, setToken }) => {
       password,
     });
 
-    if (result.data) {
+    if (result.success) {
       alert(result.data.message);
       localStorage.setItem("token", result.data.token);
       setToken(result.data.token);

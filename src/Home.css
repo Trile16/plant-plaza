@@ -53,3 +53,33 @@ p {
   justify-content: space-around;
   flex-flow: row wrap;
 }
+
+@media (max-width: 550px) {
+  #home-separator {
+    flex-direction: column-reverse;
+  }
+
+  #home-content {
+    width: 100%;
+  }
+
+  #home-img {
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  p {
+    width: 100%;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  #featured-title {
+    font-size: 2rem;
+  }
+}

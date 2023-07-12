@@ -95,3 +95,72 @@ hr {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
+
+#socials {
+  display: flex;
+}
+
+@media (max-width: 550px) {
+  #top-bar {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    font-size: 1rem;
+  }
+
+  #logo-title {
+    display: flex;
+    align-items: center;
+    width: 4rem;
+    justify-content: space-between;
+    text-decoration: none;
+  }
+
+  #logo {
+    width: 3rem;
+    padding-right: 0.5rem;
+  }
+
+  #title {
+    font-size: 1.5rem;
+    color: black;
+  }
+
+  .link-login {
+    width: 4rem;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: row-reverse;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .link {
+    font-size: 1rem;
+    text-decoration: none;
+    color: black;
+    padding: 0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  #nav-links {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  #user-icon {
+    width: 1.5rem;
+    padding-right: 0.5rem;
+  }
+
+  #socials {
+    display: flex;
+  }
+
+  .social-icon {
+    width: 2rem;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+  }
+}
